@@ -1,0 +1,137 @@
+title: Article
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              character_limit: 160
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+              smart_typography: false
+              save_html: false
+              inline: false
+              toolbar_mode: fixed
+              reading_time: false
+              fullscreen: true
+              allow_source: true
+              enable_input_rules: true
+              enable_paste_rules: true
+              remove_empty_nodes: false
+              antlers: false
+              link_noopener: false
+              link_noreferrer: false
+              target_blank: false
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: example_field
+                          field:
+                            type: example
+                            display: 'Example Field'
+                            icon: example
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
+                        -
+                          handle: toggle_field
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Toggle Field'
+                            icon: toggle
+                            width: 50
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
+                        -
+                          handle: toggle_field_2
+                          field:
+                            default: false
+                            type: toggle
+                            display: 'Toggle Field 2'
+                            icon: toggle
+                            width: 50
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
+              always_show_set_button: false
+              collapse: false
+              previews: true
+              type: bard
+              display: Content
+              icon: bard
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: topics
+            field:
+              type: terms
+              taxonomies:
+                - topics
+              display: Topics
+              mode: select
